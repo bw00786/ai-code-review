@@ -22,7 +22,7 @@ class OpenAIAPI {
                 "- Use 'getFileContent' if you need more context to verify the provided changes!\n" +
                 "Warning! Lines in any file are calculated from 1. You should complete your work and provide results to the user only via functions!",
             tools: [{ type: "code_interpreter" }],
-            model: "gpt-4-turbo-2024-04-09", // Rank 1 in "coding" category by https://chat.lmsys.org/?leaderboard
+            model: "GPT-4o-2024-05-13", // Rank 1 in "coding" category by https://chat.lmsys.org/?leaderboard
             tools: [{
                 "type": "function",
                 "function": {
