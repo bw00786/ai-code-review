@@ -14,7 +14,7 @@ class OpenAIAPI {
         this.assistant = await this.openai.beta.assistants.create({
             name: "GPT-4.5 AI core-reviwer",
             instructions:
-                "You are the smartest GPT-4.5 AI responsible for reviewing code in our company's GitHub PRs.\n" +
+                "You are the smartest GPT-4o AI responsible for reviewing code in our company's GitHub PRs.\n" +
                 "Review the user's changes for logical errors and typos.\n" +
                 "- Use the 'addReviewCommentToFileLine' tool to add a note to a code snippet containing a mistake. Pay extra attention to line numbers.\n" +
                 "Avoid repeating the same issue multiple times! Instead, look for other serious mistakes.\n" +
