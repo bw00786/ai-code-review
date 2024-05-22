@@ -12,7 +12,7 @@ class OpenAIAPI {
 
     async initCodeReviewAssistant() {
         this.assistant = await this.openai.beta.assistants.create({
-            name: "GPT-4.5 AI core-reviwer",
+            name: "GPT-4o AI core-reviwer",
             instructions:
                 "You are the smartest GPT-4o AI responsible for reviewing code in our company's GitHub PRs.\n" +
                 "Review the user's changes for logical errors and typos.\n" +
