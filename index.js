@@ -1,7 +1,8 @@
 const core = require("@actions/core");
 
 const GitHubAPI = require("./githubapi.js");
-const OpenAIAgent = require("./openai_agent.js");
+//const OpenAIAgent = require("./openai_agent.js");
+const MistralAIAgent = require("./mistral_agent.js");
 
 const main = async () => {
     const getFilteredChangedFiles = (changedFiles, includeExtensions, excludeExtensions, includePaths, excludePaths) => {
@@ -29,7 +30,7 @@ const main = async () => {
         const owner = core.getInput("owner", { required: true });
         const pullNumber = core.getInput("pr_number", { required: true });
         const githubToken = core.getInput("token", { required: true });
-        const openaiApiKey = core.getInput("openai_api_key", { required: true });
+        const MistralApiKey = core.getInput("mistralai_api_key", { required: true });
 
         const includeExtensions = core.getInput("include_extensions", { required: false });
         const excludeExtensions = core.getInput("exclude_extensions", { required: false });
@@ -45,8 +46,8 @@ const main = async () => {
         const fileCommentator = (comment, filePath, line) => {
             githubAPI.createReviewComment(owner, repo, pullNumber, pullRequestData.head.sha, comment, filePath, line);
         }
-        const openAI = new OpenAIAgent(openaiApiKey, fileContentGetter, fileCommentator);
-        await openAI.doReview(filteredChangedFiles);
+        const mistralAI = new MistralAIAgent(openaiApiKey, fileContentGetter, fileCommentator);
+        await mistralAI.doReview(filteredChangedFiles);
 
     } catch (error) {
         core.warning(error);
