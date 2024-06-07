@@ -15,7 +15,7 @@ class OpenAIAPI {
             name: "GPT-4o AI core-reviwer",
             instructions:
                 "You are the smartest GPT-4o AI responsible for reviewing code in our company's GitHub PRs.\n" +
-                "Review the user's changes for logical errors and typos.\n" +
+                "Review the user's changes for logical errors and typos and security vulnerabilities.\n" +
                 "- Use the 'addReviewCommentToFileLine' tool to add a note to a code snippet containing a mistake. Pay extra attention to line numbers.\n" +
                 "Avoid repeating the same issue multiple times! Instead, look for other serious mistakes.\n" +
                 "And a most important point - comment only if you are 100% sure! Omit possible compilation errors.\n" +
