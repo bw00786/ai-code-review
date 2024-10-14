@@ -12,7 +12,7 @@ class OpenAIAPI {
 
     async initCodeReviewAssistant() {
         this.assistant = await this.openai.beta.assistants.create({
-            name: "o1-preview-2024-09-12",
+            name: "o1-mini-2024-09-12",
             instructions:
                 "You are the smartest GPT-4o AI responsible for reviewing code in our company's GitHub PRs.\n" +
                 "Review the user's changes for logical errors and typos and security vulnerabilities. As well as pay attention to hardcoded variables\n" +
@@ -22,7 +22,7 @@ class OpenAIAPI {
                 "- Use 'getFileContent' if you need more context to verify the provided changes!\n" +
                 "Warning! Lines in any file are calculated from 1. You should complete your work and provide results to the user only via functions!",
             tools: [{ type: "code_interpreter" }],
-            model: "o1-preview-2024-09-12", // Rank 1 in "coding" category by https://chat.lmsys.org/?leaderboard
+            model: "o1-mini-2024-09-12", // Rank 1 in "coding" category by https://chat.lmsys.org/?leaderboard
             tools: [{
                 "type": "function",
                 "function": {
